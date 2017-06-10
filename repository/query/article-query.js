@@ -38,18 +38,3 @@ export let getSingleArticle = (req, res, next) => {
         });
 };
 
-export let getArticleByCategory = (req, res ,next) => {
-    let articleID = parseInt(req.params.id);
-    db.one(queryData.qArticleByCategory, articleID)
-        .then(function (data) {
-            res.status(200)
-                .json({
-                    status: 'success',
-                    data: data,
-                    message: 'successfully retrieved article by category'
-                });
-        })
-        .catch(function (err) {
-            return next(err);
-        });
-};

@@ -1,7 +1,7 @@
 /**
  * Created by Prohos on 6/9/2017.
  */
-import * as qArticle from '../repository/query/articlequery'
+import * as qArticle from '../repository/query/article-query'
 
 
 let express = require('express');
