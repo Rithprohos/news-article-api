@@ -9,3 +9,5 @@ export let qArticleById = 'SELECT * FROM getArticleById($1)';
 export let qArticleByCategory = 'SELECT * FROM getArticleByCategory($1)';
 
 export let qAllCategory = 'SELECT * FROM tbl_categories';
+
+export let qCreateCategory = 'INSERT INTO tbl_categories(categoryname) VALUES(${name})';

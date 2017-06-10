@@ -4,8 +4,6 @@
 import * as queryData from './sqlquery/sql-statement'
 import {db} from '../connection/pg-connection'
 
-//TODO: get all categories
-
 //get all categories
 export let getAllCategories = (req, res, next) => {
     db.any(queryData.qAllCategory)
@@ -38,3 +36,22 @@ export let getArticleByCategory = (req, res ,next) => {
             return next(err);
         });
 };
+
+//post category
+export let postCategory = (req, res ,next) => {
+    db.none(queryData.qCreateCategory,req.body)
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one puppy'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+};
+
+//TODO: PUT
+
+//TODO: DELETE
