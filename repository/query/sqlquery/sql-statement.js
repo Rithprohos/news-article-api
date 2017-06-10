@@ -7,3 +7,5 @@ export let qAllArticle = 'SELECT * FROM getAllArticle()';
 export let qArticleById = 'SELECT * FROM getArticleById($1)';
 
 export let qArticleByCategory = 'SELECT * FROM getArticleByCategory($1)';
+
+export let qAllCategory = 'SELECT * FROM tbl_categories';
