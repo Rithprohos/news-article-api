@@ -44,7 +44,7 @@ export let postCategory = (req, res ,next) => {
             res.status(200)
                 .json({
                     status: 'success',
-                    message: 'Inserted one puppy'
+                    message: `${req.body.name} is inserted to Category`
                 });
         })
         .catch(function (err) {
