@@ -7,12 +7,15 @@ import * as qArticle from '../query/articlequery'
 let express = require('express');
 let router = express.Router();
 
-/* GET home page. */
+//all article
 router.get('/', function(req, res, next) {
     qArticle.getAllArticle(req, res, next);
 });
 
-//TODO : article by id
+//article by id
+router.get('/:id', function(req, res, next) {
+    qArticle.getSingleArticle(req, res, next);
+});
 
 //TODO : add article
 
