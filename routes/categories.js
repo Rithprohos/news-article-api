@@ -1,12 +1,14 @@
 /**
  * Created by Prohos on 6/9/2017.
  */
+import * as qCategory from '../repository/query/category-query'
+
 let express = require('express');
 let router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Category' });
+//get article by category
+router.get('/:id', function(req, res, next) {
+    qCategory.getArticleByCategory(req, res, next);
 });
 
 module.exports = router;
