@@ -21,6 +21,23 @@ export let getAllArticle = (req, res, next) => {
         });
 };
 
+//post article
+export let postArticle = (req, res ,next) => {
+    req.body.authid = parseInt(req.body.authid);
+    req.body.cateid = parseInt(req.body.cateid);
+    db.none(queryData.qCreateArticle,req.body)
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: `${req.body.title} is inserted `
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+};
+
 //get single article
 export let getSingleArticle = (req, res, next) => {
     let articleID = parseInt(req.params.id);
