@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 //post article
 router.post('/',function (req, res, next) {
-    
+   qArticle.postArticle(req, res, next);
 });
 
 //article by id

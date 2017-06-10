@@ -25,7 +25,7 @@ export let getAllArticle = (req, res, next) => {
 export let postArticle = (req, res ,next) => {
     req.body.authid = parseInt(req.body.authid);
     req.body.cateid = parseInt(req.body.cateid);
-    db.none(queryData.qCreateArticle,req.body)
+    db.one(queryData.qCreateArticle,req.body)
         .then(function () {
             res.status(200)
                 .json({
