@@ -1,7 +1,7 @@
 /**
  * Created by Prohos on 6/9/2017.
  */
-import * as queryData from './sqlquery/sqlquery'
+import * as queryData from './sqlquery/sql-statement'
 import {db} from '../connection/pg-connection'
 
 
@@ -21,7 +21,7 @@ export let getAllArticle = (req, res, next) => {
         });
 };
 
-//get all article
+//get single article
 export let getSingleArticle = (req, res, next) => {
     let articleID = parseInt(req.params.id);
     db.one(queryData.qArticleById, articleID)
