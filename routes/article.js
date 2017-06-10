@@ -12,6 +12,11 @@ router.get('/', function(req, res, next) {
     qArticle.getAllArticle(req, res, next);
 });
 
+//post article
+router.post('/',function (req, res, next) {
+    
+});
+
 //article by id
 router.get('/:id', function(req, res, next) {
     qArticle.getSingleArticle(req, res, next);
