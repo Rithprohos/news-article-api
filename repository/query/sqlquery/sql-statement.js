@@ -4,6 +4,8 @@
 
 export let qAllArticle = 'SELECT * FROM getAllArticle()';
 
+export let qAllArticleLimitOffset = 'SELECT * FROM getAllArticleLimitOffset($1,$2)';
+
 export let qArticleById = 'SELECT * FROM getArticleById($1)';
 
 export let qCreateArticle = 'SELECT createArticle(${title},${detail},${imgurl},${authid},${cateid})';
