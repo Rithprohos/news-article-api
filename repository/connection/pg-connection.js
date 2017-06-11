@@ -8,5 +8,5 @@ let dbName = 'd1brg0ggc39ru4';
 
 
 export let pgp = require('pg-promise')(/*options*/);
- export let db = pgp('postgres://postgres:prohos@localhost:5432/news');
-//export let db = pgp(`postgres://${user}:${password}@${hostName}:5432/${dbName}`);
+// export let db = pgp('postgres://postgres:prohos@localhost:5432/news');
+export let db = pgp(`postgres://${user}:${password}@${hostName}:5432/${dbName}`);
