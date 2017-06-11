@@ -22,8 +22,9 @@ router.get('/:id', function(req, res, next) {
     qArticle.getSingleArticle(req, res, next);
 });
 
-
-//TODO : add article
+router.get('/limit=:limit/offset=:offset',function (req, res, next) {
+   qArticle.getLimitArticle(req, res, next);
+});
 
 //TODO : delete article
 

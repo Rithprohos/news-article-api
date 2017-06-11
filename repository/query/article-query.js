@@ -55,4 +55,19 @@ export let getSingleArticle = (req, res, next) => {
         });
 };
 
+//get article by limit and offset for pagination
+export let getLimitArticle = (req, res, next) => {
+  let limit = parseInt(req.params.limit);
+  let offset = parseInt(req.params.offset);
+  db.any(queryData.qAllArticleLimitOffset,[limit,offset])
+      .then(function (data) {
+          res.status(200)
+              .json({
+                  status: 'success',
+                  data: data,
+                  message: 'successfully retrieved article'
+              });
+      })
+};
+
 
