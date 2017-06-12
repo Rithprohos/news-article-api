@@ -1,0 +1,120 @@
+<!-- Created by Prohos on 6/12/2017. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>API DOC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .des-header{
+            font-size: 2em;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>News Article API <small>Version : 1.0</small></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Article</h2>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="btn btn-success btn-lg">GET</span> <span class="des-header">/v1/api/articles</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <p>this to get all article from server</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span class="btn btn-success btn-lg">GET</span> <span class="des-header">/v1/api/articles/{id}</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <p>for get article by id</p>
+                        <p>Example : </p>
+                        <div class="well well-sm">/v1/api/articles/4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span class="btn btn-success btn-lg">GET</span> <span class="des-header">/v1/api/articles/limit={limit}/offset={offset}</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <p>to get limit data <br> use this for pagination</p>
+                        <p>Param {limit} : សំរាប់កំណត់ចំនួនអត្ថបទដែលចង់បង្ហាញ</p>
+                        <p>Example : </p>
+                        <div class="well well-sm">/v1/api/articles/limit=5/offset=5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--category-->
+        <h2>Category</h2>
+        <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            <span class="btn btn-success btn-lg">GET</span> <span class="des-header">/v1/api/categories</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                       <p>Use this to get all Category</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFive">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <span class="btn btn-success btn-lg">GET</span> <span class="des-header">/v1/api/categories/{id}/articles</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                    <div class="panel-body">
+                        <p>for get article by category id</p>
+                        <p>Example : </p>
+                        <div class="well well-sm">/v1/api/categories/2/articles</div>
+                        <p>this will get all article by social category</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
