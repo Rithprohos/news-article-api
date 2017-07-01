@@ -8,6 +8,8 @@ export let qAllArticleLimitOffset = 'SELECT * FROM getAllArticleLimitOffset($1,$
 
 export let qArticleById = 'SELECT * FROM getArticleById($1)';
 
+export let qCountArticle = 'SELECT articlecategory,count(articleid) FROM tbl_article GROUP BY articlecategory';
+
 export let qCreateArticle = 'SELECT createArticle(${title},${detail},${imgurl},${authid},${cateid})';
 
 export let qArticleByCategory = 'SELECT * FROM getArticleByCategory($1)';

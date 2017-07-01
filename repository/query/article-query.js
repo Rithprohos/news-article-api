@@ -21,6 +21,22 @@ export let getAllArticle = (req, res, next) => {
         });
 };
 
+//count article
+export let countArticle = (req, res, next)   =>  {
+    db.any(queryData.qCountArticle)
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Successfully retrieved ALL article'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+};
+
 //post article
 export let postArticle = (req, res ,next) => {
     req.body.authid = parseInt(req.body.authid);

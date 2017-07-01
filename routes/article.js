@@ -17,6 +17,11 @@ router.post('/',function (req, res, next) {
    qArticle.postArticle(req, res, next);
 });
 
+//count article
+router.get('/count',function (req, res, next) {
+    qArticle.countArticle(req,res,next);
+});
+
 //article by id
 router.get('/:id', function(req, res, next) {
     qArticle.getSingleArticle(req, res, next);
